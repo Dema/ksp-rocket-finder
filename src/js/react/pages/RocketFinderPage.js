@@ -53,7 +53,7 @@ var RocketFinderPage = React.createClass({
 
         return (
             <div className="z">
-{this.state.toJSON()}
+{this.state}
             </div>
         );
     }
