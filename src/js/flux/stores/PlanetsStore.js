@@ -6,7 +6,7 @@ class PlanetsStore {
         // this.bindActions(BeanListActions);
 
 
-        this.planets = [
+        this.planets = Immutable.List([
     {name:"None", gravity:0},
 	{name:"Moho", gravity:2.70},
 	{name:"Eve", gravity:16.7},
@@ -24,7 +24,7 @@ class PlanetsStore {
 	{name:"Bop", gravity:0.589},
 	{name:"Pol", gravity:0.373},
 	{name:"Eeloo", gravity:1.69}
-];
+]);
     }
 
 }

@@ -1,5 +1,5 @@
 var gulp            = require('gulp');
-var sass            = require('gulp-ruby-sass');
+var sass            = require('gulp-sass');
 var autoprefixer    = require('gulp-autoprefixer');
 var rename          = require('gulp-rename');
 var minifycss       = require('gulp-minify-css');
@@ -11,11 +11,11 @@ var autoprefixerCompatibility =
         'Opera >= 12',
         'Chrome >= 25',
         'Firefox >= 13',
-        'ie >= 9'];
+        'ie >= 8'];
 
 gulp.task('styles', function() {
     return gulp.src('src/sass/styles.scss')
-        .pipe(sass({ style: 'expanded', "sourcemap=none": true }))
+        .pipe(sass({ style: 'expanded', "sourcemap=none": true, includePaths: ["node_modules/bootstrap-sass/assets/stylesheets"] }))
         .pipe(autoprefixer({browsers: autoprefixerCompatibility, cascade: false}))
         .pipe(gulp.dest('public/stylesheets'))
         .pipe(rename({suffix: '.min'}))

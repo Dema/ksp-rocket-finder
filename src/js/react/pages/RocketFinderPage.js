@@ -1,5 +1,7 @@
 var React = require('react');
 var Immutable = require('immutable');
+var ReactBootstrap = require('react-bootstrap');
+var Input = ReactBootstrap.Input;
 
 // var BeanListActions = require('../../flux/actions/BeanListActions');
 // var BeanListStore = require('../../flux/stores/BeanListStore');
@@ -9,6 +11,7 @@ var Immutable = require('immutable');
 var ListenerMixin = require('alt/mixins/ListenerMixin');
 
 // var BeanListItem = require('../components/BeanListItem');
+var PlanetsSelector = require('../components/PlanetsSelector');
 
 var RocketFinderPage = React.createClass({
     mixins: [ListenerMixin],
@@ -37,6 +40,9 @@ var RocketFinderPage = React.createClass({
     },
 
     render() {
+      var planets = this.state.planetsStore.planets.map((planet, idx)=>{
+        return <option value={idx} key={planet.name}>{planet.name}</option>;
+      });
         // var beanList = null;
         //
         // if (this.state.loadingBeanList) {
@@ -52,9 +58,12 @@ var RocketFinderPage = React.createClass({
         // }
 
         return (
-            <div className="z">
-{this.state}
+          <form className="form-horizontal">
+            <div className="form-group">
+              <Input type="select" label="Planet" labelClassName='col-xs-2' wrapperClassName='col-xs-10' >{planets}</Input>
+
             </div>
+          </form>
         );
     }
 });
