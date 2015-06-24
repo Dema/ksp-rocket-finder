@@ -13,11 +13,13 @@ var App = React.createClass({
         return (
             <div>
               <h1>Optimal Rocket Finder</h1>
+              <div className="container-fluid">
                 <ul className="navigation">
                     <Link to='home'><li className="navigation-item">HOME</li></Link>
                 </ul>
                 <RouteHandler {...this.props} />
             </div>
+          </div>
         );
     }
 });
