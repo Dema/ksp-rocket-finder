@@ -1,7 +1,5 @@
 var React = require('react');
 var Immutable = require('immutable');
-var ReactBootstrap = require('react-bootstrap');
-var Input = ReactBootstrap.Input;
 
 // var BeanListActions = require('../../flux/actions/BeanListActions');
 // var BeanListStore = require('../../flux/stores/BeanListStore');
@@ -58,12 +56,19 @@ var RocketFinderPage = React.createClass({
         // }
 
         return (
+          <div className="col-xs-4">
           <form className="form-horizontal">
             <div className="form-group">
-              <Input type="select" label="Planet" labelClassName='col-xs-2' wrapperClassName='col-xs-10' >{planets}</Input>
-
-            </div>
+                <label className="col-xs-2" htmlFor="planet">Planet</label>
+                <select id="planetInput" className="col-xs-10">{planets}</select>
+                </div>
+                <div className="form-group">
+                  <label className="col-xs-2" htmlFor="playloadMass">Payload mass</label>
+                  <input type="text" className="col-xs-10" />
+                </div>
           </form>
+        </div>
+
         );
     }
 });
