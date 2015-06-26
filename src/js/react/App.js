@@ -16,6 +16,7 @@ var App = React.createClass({
               <div className="container-fluid">
                 <ul className="navigation">
                     <Link to='home'><li className="navigation-item">HOME</li></Link>
+                    <Link to='techTree'><li className="navigation-item">Tech Tree</li></Link>
                 </ul>
                 <RouteHandler {...this.props} />
             </div>
